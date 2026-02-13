@@ -1,0 +1,176 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Inter',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:80px 20px;
+max-width:900px;
+margin:auto;
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.message{
+line-height:1.9;
+font-size:1.05rem;
+color:#f2f2f2;
+white-space:pre-line;
+}
+
+.highlight{
+color:#ff7aa2;
+cursor:pointer;
+}
+
+.timeline .event{
+margin:15px 0;
+font-size:1.2rem;
+opacity:.8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+width:90%;
+max-width:1100px;
+margin:60px auto;
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+.gallery.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+transition:.4s;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+
+.lightbox img{
+max-width:85%;
+border-radius:20px;
+}
+
+.final{
+font-size:3rem;
+color:#ff7aa2;
+text-shadow:0 0 25px rgba(255,122,162,.7);
+}
+
+.signature{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+margin-top:30px;
+color:#ff7aa2;
+}
+
+.secretText{
+display:none;
+margin-top:30px;
+color:#ffb6c1;
+}
+
+/* Floating hearts */
+.heart{
+position:fixed;
+font-size:20px;
+animation:float 6s linear infinite;
+color:#ff7aa2;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-800px);opacity:0}
+}
+/* Start Screen */
+#startScreen{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity 1s ease;
+}
+
+.startTitle{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.startButtons button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    margin:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yesBtn{
+    background:#ff7aa2;
+    color:white;
+    box-shadow:0 0 20px #ff7aa2;
+}
+
+#noBtn{
+    background:white;
+    color:black;
+    position:absolute;
+}
